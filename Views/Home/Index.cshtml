@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Sample_MVC.Models.Notes>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div>
+    <span>@ViewData["role"]</span>
+</div>
+<div>
+    <table border="1">
+        <thead>
+        <td>Notes Id</td><td>Notes Title</td><td>Notes Description</td><td>Created At</td>
+            </thead>
+            <tbody>
+        @foreach (var n in Model) {
+             <tr>
+            <td>@n.NotesId</td><td>@n.NotesTitle</td><td>@n.NotesDescription</td><td>@n.NotesCreatedAt</td>
+                </tr>
+        }
+            </tbody>
+    </table>
+</div>
+</div>
